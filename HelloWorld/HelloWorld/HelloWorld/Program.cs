@@ -17,15 +17,39 @@ namespace HelloWorld
 
             // Prohození
 
-            Console.WriteLine($"a: {a}, b: {b}");
+            //Console.WriteLine($"Původní hodnoty");
+            //Console.WriteLine($"a: {a}, b: {b}");
 
-            int c = 0;
+            //int c = 0;
 
-            c = a;
-            a = b;
-            b = c;
+            //c = a;
+            //a = b;
+            //b = c;
 
-            Console.WriteLine($"a: {a}, b: {b}");
+            //Console.WriteLine($"Nové hodnoty");
+            //Console.WriteLine($"a: {a}, b: {b}");
+
+            //string str = "jmeno";
+            //char chr = 'a';
+
+            //DateTime date = new DateTime(1999, 12, 31);
+
+            //if (a == 20)
+            //{
+            //    Console.WriteLine("Jsem v podmínce");
+            //}
+            //else
+            //{
+            //    Console.Write("Jsem v else");
+            //}
+
+            //Console.WriteLine("Jsem za ifem");
+
+            Console.WriteLine("Porovnání čísel 88 a 77:");
+
+            int vetsiCislo = VetsiCislo(88, 77);
+
+            Console.WriteLine($"Větší číslo je: {vetsiCislo}");
 
         }
 
@@ -48,6 +72,22 @@ namespace HelloWorld
             Console.WriteLine($"Součet a + b: {a} + {b} = {sum}");
 
             return sum;
+        }
+
+        static int VetsiCislo(int a, int b)
+        {
+            int vetsiCislo;
+
+            if(a > b)
+            {
+                vetsiCislo = a;
+            }
+            else
+            {
+                vetsiCislo = b;
+            }
+
+            return vetsiCislo;
         }
 
     }
