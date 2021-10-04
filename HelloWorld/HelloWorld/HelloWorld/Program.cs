@@ -45,15 +45,41 @@ namespace HelloWorld
 
             //Console.WriteLine("Jsem za ifem");
 
-            int a = 20;
+            const int c_a = 155;
+            const int c_b = 255;
+
+            int a = 155;
             int b = 30;
 
-            Console.WriteLine($"Porovnání čísel {a} a {b}:");
+            //Console.WriteLine($"Porovnání čísel {a} a {b}:");
 
-            int vetsiCislo = VetsiCislo(a, b);
+            //int vetsiCislo = VetsiCislo(a, b);
 
-            Console.WriteLine($"Větší číslo je: {vetsiCislo}");
+            //Console.WriteLine($"Větší číslo je: {vetsiCislo}");
 
+            if ((a == c_a) || (a == c_b))
+            {
+                Console.WriteLine($"False");
+            }
+            else
+            {
+                if(a > b)
+                {
+                    Console.WriteLine($"True");
+                }
+                else
+                {
+                    Console.WriteLine($"False");
+                }
+            }
+
+        }
+
+        static bool Porovnani(int a, int b)
+        {
+            bool pon = false;
+
+            return false;
         }
 
         static void Hello(string name)
@@ -79,15 +105,19 @@ namespace HelloWorld
 
         static int VetsiCislo(int a, int b)
         {
-            int vetsiCislo;
+            int vetsiCislo = 0;
 
-            if(a > b)
+            if (a > b)
             {
                 vetsiCislo = a;
             }
-            else
+            else if (b > a)
             {
                 vetsiCislo = b;
+            }
+            else
+            {
+                vetsiCislo = a;
             }
 
             return vetsiCislo;
