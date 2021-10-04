@@ -7,15 +7,31 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-            Hello("Stando");
+            //Hello("Standa");
             //int sum = Add(5, 3);
             //Console.WriteLine(sum);
             //AddAndPrint(95, 55);
+
+            int a = 20;
+            int b = 30;
+
+            // Prohození
+
+            Console.WriteLine($"a: {a}, b: {b}");
+
+            int c = 0;
+
+            c = a;
+            a = b;
+            b = c;
+
+            Console.WriteLine($"a: {a}, b: {b}");
+
         }
 
-        static void Hello(string jmeno)
+        static void Hello(string name)
         {
-            Console.WriteLine($"Hello {jmeno} !");
+            Console.WriteLine($"Hello {name} !");
         }
 
         static int Add(int a, int b)
@@ -33,5 +49,6 @@ namespace HelloWorld
 
             return sum;
         }
+
     }
 }
