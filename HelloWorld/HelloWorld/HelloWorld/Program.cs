@@ -73,27 +73,52 @@ namespace HelloWorld
             //    }
             //}
 
-            Console.Write("Napište Vaše jméno: ");
+            //Console.Write("Napište Vaše jméno: ");
+            //var input = Console.ReadLine();
+            //Hello(input);
 
-            var input = Console.ReadLine();
+            //int a = 23;
+            //double d = 444.6698;
+            //a = (int)Math.Round(d, 0);
+            //Console.WriteLine(a);
 
-            Hello(input);
+            //string input = Console.ReadLine();
+            //int num = int.Parse(input);
+            //var d = double.Parse(input);
+
+            //num.ToString();
+
+            //Console.WriteLine($"vstup + 10: {d + 10}");
+
+            Console.WriteLine("Zadejte teplotu ve st. F: ");
+            Console.WriteLine($"Teplota ve stupních C: {PrevodTeploty(double.Parse(Console.ReadLine()))}");
 
         }
+
+        static double PrevodTeploty(double f)
+        {
+            double c;
+
+            c = (f - 32) * (5d / 9d);
+
+            return c;
+
+        }
+
 
         static bool IsGreater(int a, int b)
         {
             var x = (a > b) ? a : b;
 
-            return (a > b);
-            
+            return (a > b);          
         }
 
         static void Hello(string name)
         {
             string pozdrav = "";
+            string nameUpper = name.ToUpper();
 
-            if(name == "Bob" || name == "Alice")
+            if((nameUpper == "Bob".ToUpper()) || (nameUpper == "Alice".ToUpper()))
             {
                 pozdrav = "Vítej zpět";
             }
