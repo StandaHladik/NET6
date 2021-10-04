@@ -45,11 +45,11 @@ namespace HelloWorld
 
             //Console.WriteLine("Jsem za ifem");
 
-            const int c_a = 155;
-            const int c_b = 255;
+            //const int c_a = 155;
+            //const int c_b = 255;
 
-            int a = 155;
-            int b = 30;
+            //int a = 255;
+            //int b = 30;
 
             //Console.WriteLine($"Porovnání čísel {a} a {b}:");
 
@@ -57,29 +57,36 @@ namespace HelloWorld
 
             //Console.WriteLine($"Větší číslo je: {vetsiCislo}");
 
-            if ((a == c_a) || (a == c_b))
-            {
-                Console.WriteLine($"False");
-            }
-            else
-            {
-                if(a > b)
-                {
-                    Console.WriteLine($"True");
-                }
-                else
-                {
-                    Console.WriteLine($"False");
-                }
-            }
+            //if ((a == c_a) || (a == c_b))
+            //{
+            //    Console.WriteLine($"False");
+            //}
+            //else
+            //{
+            //    if(a > b)
+            //    {
+            //        Console.WriteLine($"True");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"False");
+            //    }
+            //}
+
+            Console.Write("Napište Vaše jméno:");
+
+            var input = Console.ReadLine();
+
+            Hello(input);
 
         }
 
-        static bool Porovnani(int a, int b)
+        static bool IsGreater(int a, int b)
         {
-            bool pon = false;
+            var x = (a > b) ? a : b;
 
-            return false;
+            return (a > b);
+            
         }
 
         static void Hello(string name)
