@@ -12,8 +12,8 @@ namespace HelloWorld
             //Console.WriteLine(sum);
             //AddAndPrint(95, 55);
 
-            int a = 20;
-            int b = 30;
+            //int a = 20;
+            //int b = 30;
 
             // Prohození
 
@@ -45,9 +45,12 @@ namespace HelloWorld
 
             //Console.WriteLine("Jsem za ifem");
 
-            Console.WriteLine("Porovnání čísel 88 a 77:");
+            int a = 20;
+            int b = 30;
 
-            int vetsiCislo = VetsiCislo(88, 77);
+            Console.WriteLine($"Porovnání čísel {a} a {b}:");
+
+            int vetsiCislo = VetsiCislo(a, b);
 
             Console.WriteLine($"Větší číslo je: {vetsiCislo}");
 
