@@ -73,7 +73,7 @@ namespace HelloWorld
             //    }
             //}
 
-            Console.Write("Napište Vaše jméno:");
+            Console.Write("Napište Vaše jméno: ");
 
             var input = Console.ReadLine();
 
@@ -91,7 +91,18 @@ namespace HelloWorld
 
         static void Hello(string name)
         {
-            Console.WriteLine($"Hello {name} !");
+            string pozdrav = "";
+
+            if(name == "Bob" || name == "Alice")
+            {
+                pozdrav = "Vítej zpět";
+            }
+            else
+            {
+                pozdrav = "Vítej";
+            }
+
+            Console.WriteLine($"{pozdrav} {name} !");
         }
 
         static int Add(int a, int b)
