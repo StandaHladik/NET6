@@ -41,26 +41,29 @@ namespace HelloWorld
             //VypisCisel();
             //SectiCisla();
 
-            Person adam = new Person();
+            //Person adam = new Person();
 
-            adam.FirstName = "Adam";
-            adam.LastName = "Smith";
-            adam.Age = 30;
+            //adam.FirstName = "Adam";
+            //adam.LastName = "Smith";
+            //adam.Age = 30;
 
-            Person alice = new Person();
-            alice.FirstName = "Alice";
-            alice.LastName = "Smith";
-            alice.Age = 36;
+            //Person alice = new Person();
+            //alice.FirstName = "Alice";
+            //alice.LastName = "Smith";
+            //alice.Age = 36;
 
-            Person p1 = new Person();
-            p1.FirstName = "John";
+            //Person p1 = new Person();
+            //p1.FirstName = "John";
 
-            Person p2 = new Person("Karel", "Nový", 22);
+            //Person p2 = new Person("Karel", "Nový", 22);
 
-            Console.WriteLine($"osoba 1 : {p1.ToString()}");
-            Console.WriteLine($"osoba 1 : {p2.ToString()}");
+            //Console.WriteLine($"osoba 1 : {p1.ToString()}");
+            //Console.WriteLine($"osoba 1 : {p2.ToString()}");
 
 
+            Point p = new Point();
+
+            Console.WriteLine($"{p.ToString()}");
 
         }
 
