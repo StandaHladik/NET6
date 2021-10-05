@@ -15,18 +15,28 @@ namespace HelloWorld
             Y = 0;
         }
 
-        public Point(int x, int y)
+        public Point(uint x, uint y)
         {
             X = x;
             X = y;
         }
 
-        public int X { get; set; }
-        public int Y { get; set; }
+        public uint X { get; set; }
+        public uint Y { get; set; }
 
         public override string ToString()
         {
             return "Souřadnice X: " + X + " Souřadnice Y: " + Y;
+        }
+
+        public static Point GetDefaultPoint()
+        {
+            return new Point(100, 100);
+        }
+
+        public uint Obsah()
+        {
+            return (this.X * this.Y);
         }
 
     }
