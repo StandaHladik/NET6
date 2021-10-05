@@ -145,12 +145,20 @@ namespace HelloWorld
 
             foreach(string s in File.ReadLines(file))
             {
-                Console.WriteLine(s);
+                String[] strlist = s.Split(';', 3, StringSplitOptions.RemoveEmptyEntries);
+                int i = 0;
 
+                string firstName = strlist[0];
+                string lastName = strlist[1];
+                string age = strlist[2];
 
-                Console.WriteLine(s.Split());
+                people.Add(new Person(firstName, lastName, int.Parse(age)));
 
-                //people.Add(new Person(s.Split(';'))));
+            }
+
+            foreach (Person per in people)
+            {
+                Console.WriteLine(per.ToString());
             }
 
         }
