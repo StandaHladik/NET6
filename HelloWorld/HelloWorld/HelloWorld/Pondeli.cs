@@ -94,5 +94,77 @@ namespace HelloWorld
 
         //Console.WriteLine("Zadejte teplotu ve st. F: ");
         //Console.WriteLine($"Teplota ve stupních C: {PrevodTeploty(double.Parse(Console.ReadLine()))}");
+
+        static double PrevodTeploty(double f)
+        {
+            double c;
+
+            c = (f - 32) * (5d / 9d);
+
+            return c;
+
+        }
+
+
+        static bool IsGreater(int a, int b)
+        {
+            var x = (a > b) ? a : b;
+
+            return (a > b);
+        }
+
+        static void Hello(string name)
+        {
+            string pozdrav = "";
+            string nameUpper = name.ToUpper();
+
+            if ((nameUpper == "Bob".ToUpper()) || (nameUpper == "Alice".ToUpper()))
+            {
+                pozdrav = "Vítej zpět";
+            }
+            else
+            {
+                pozdrav = "Vítej";
+            }
+
+            Console.WriteLine($"{pozdrav} {name} !");
+        }
+
+        static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        static int AddAndPrint(int a, int b)
+        {
+            int sum;
+
+            sum = a + b;
+
+            Console.WriteLine($"Součet a + b: {a} + {b} = {sum}");
+
+            return sum;
+        }
+
+        static int VetsiCislo(int a, int b)
+        {
+            int vetsiCislo = 0;
+
+            if (a > b)
+            {
+                vetsiCislo = a;
+            }
+            else if (b > a)
+            {
+                vetsiCislo = b;
+            }
+            else
+            {
+                vetsiCislo = a;
+            }
+
+            return vetsiCislo;
+        }
+
     }
 }
