@@ -38,7 +38,9 @@ namespace HelloWorld
             //    counter = counter + 1;
             //}
 
-            VypisCisel();
+            //VypisCisel();
+            SectiCisla();
+
 
         }
 
@@ -50,12 +52,26 @@ namespace HelloWorld
                 Console.WriteLine("Zadejte číslo: ");
                 int cislo = int.Parse(Console.ReadLine());
                 Console.WriteLine($"Číslo je {cislo}");
-                if(cislo % 2 == 0)
+                if((cislo % 2) == 0)
                 {
                     liche = false;
                 }
             }
             Console.WriteLine("Konec");
+        }
+
+        static void SectiCisla()
+        {
+            Console.WriteLine("Zadejte číslo: ");
+            int cislo = int.Parse(Console.ReadLine());
+            int vysledek = 0;
+
+            for (int i = 1; i < cislo; i++)
+            {
+                vysledek = vysledek + i;
+            }
+
+            Console.WriteLine($"Výsledek po sečtení všech čísel od 1 do {cislo} je {vysledek}");
         }
 
         static string GetDayName(int number)
