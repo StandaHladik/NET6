@@ -90,10 +90,43 @@ namespace HelloWorld
 
             //Console.WriteLine($"vstup + 10: {d + 10}");
 
-            Console.WriteLine("Zadejte teplotu ve st. F: ");
-            Console.WriteLine($"Teplota ve stupních C: {PrevodTeploty(double.Parse(Console.ReadLine()))}");
+            //Console.WriteLine("Zadejte teplotu ve st. F: ");
+            //Console.WriteLine($"Teplota ve stupních C: {PrevodTeploty(double.Parse(Console.ReadLine()))}");
+
+            Console.Write("Zadejte rok narození: ");
+            int vek = Int32.Parse(Console.ReadLine());
+            Console.WriteLine($"Vaše generace je: {Generace(vek)}");
 
         }
+
+        static string Generace(int year)
+        {
+            string generace = "Boomers";
+
+            if (year > 1946 && year <= 1964)
+            {
+                generace = "Baby Boomers";
+            }
+            else if (year >= 1965 && year <= 1980)
+            {
+                generace = "X";
+            }
+            else if (year >= 1981 && year <= 1996)
+            {
+                generace = "Millenial";
+            }
+            else if (year >= 1997 && year <= 2012)
+            {
+                generace = "Z";
+            }
+            else if (year >= 1946 && year <= 1964)
+            {
+                generace = "Aplha";
+            }
+
+            return generace;
+        }
+
 
         static double PrevodTeploty(double f)
         {
