@@ -18,7 +18,7 @@ namespace HelloWorld
         public Point(uint x, uint y)
         {
             X = x;
-            X = y;
+            Y = y;
         }
 
         public uint X { get; set; }
