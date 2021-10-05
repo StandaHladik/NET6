@@ -94,7 +94,7 @@ namespace HelloWorld
             //Console.WriteLine($"Teplota ve stupních C: {PrevodTeploty(double.Parse(Console.ReadLine()))}");
 
             Console.Write("Zadejte rok narození: ");
-            int vek = Int32.Parse(Console.ReadLine());
+            int vek = int.Parse(Console.ReadLine());
             Console.WriteLine($"Vaše generace je: {Generace(vek)}");
 
         }
