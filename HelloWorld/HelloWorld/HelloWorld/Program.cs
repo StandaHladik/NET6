@@ -63,15 +63,24 @@ namespace HelloWorld
         static void SectiCisla()
         {
             Console.WriteLine("Zadejte číslo: ");
-            int cislo = int.Parse(Console.ReadLine());
-            int vysledek = 0;
-
-            for (int i = 1; i < cislo; i++)
+            int cislo = 0;
+            bool prevodOk = int.TryParse(Console.ReadLine(), out cislo);
+            if(prevodOk == false)
             {
-                vysledek = vysledek + i;
+                Console.WriteLine("Nebylo zadáno číslo.");
+                return;
+            }
+            else
+            {
+                int vysledek = 0;
+
+                for (int i = 1; i < cislo; i++)
+                {
+                    vysledek = vysledek + i;
+                }
+                Console.WriteLine($"Výsledek po sečtení všech čísel od 1 do {cislo} je {vysledek}");
             }
 
-            Console.WriteLine($"Výsledek po sečtení všech čísel od 1 do {cislo} je {vysledek}");
         }
 
         static string GetDayName(int number)
