@@ -11,10 +11,51 @@ namespace HelloWorld
             //int vek = int.Parse(Console.ReadLine());
             //Console.WriteLine($"Vaše generace je: {Generace(vek)}");
 
-            Console.Write("Zadejte číslo dne: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Název dne v týdnu je: {GetDayName(number)}");
+            //Console.Write("Zadejte číslo dne: ");
+            //int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Název dne v týdnu je: {GetDayName(number)}");
 
+            //int[] numbers = new[] { 10, 11, 12, 13, 20, 67 };
+
+            //// klasicky for s indexem - vim kolikrat se opakuje
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    //Console.WriteLine($"index {i}");
+
+            //    Console.WriteLine($"index {i} má hodnostu {numbers[i]}");
+
+            //}
+
+            //// foreach - iterace pres kolekci prvku (pole)
+            //foreach(int number in numbers)
+            //{
+            //    Console.WriteLine($"Teď zpracovávám čslo {number}");
+            //}
+
+            //int counter = 0;
+            //while(counter < 5)
+            //{
+            //    counter = counter + 1;
+            //}
+
+            VypisCisel();
+
+        }
+
+        static void VypisCisel()
+        {
+            bool liche = true;
+            while (liche == true)
+            {
+                Console.WriteLine("Zadejte číslo: ");
+                int cislo = int.Parse(Console.ReadLine());
+                Console.WriteLine($"Číslo je {cislo}");
+                if(cislo % 2 == 0)
+                {
+                    liche = false;
+                }
+            }
+            Console.WriteLine("Konec");
         }
 
         static string GetDayName(int number)
