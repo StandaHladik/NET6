@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace HelloWorld
 {
@@ -122,19 +123,34 @@ namespace HelloWorld
 
             List<Person> people = new List<Person>();
 
-            var p1 = new Person("Adam", "Smith", 30);
-            var p2 = new Person("Jane", "Doe", 45);
-            var p3 = new Person("Jan", "Novák", 22);
-            var p4 = new Person("Marie", "Dolejší", 18);
+            //var p1 = new Person("Adam", "Smith", 30);
+            //var p2 = new Person("Jane", "Doe", 45);
+            //var p3 = new Person("Jan", "Novák", 22);
+            //var p4 = new Person("Marie", "Dolejší", 18);
 
-            people.Add(p1);
-            people.Add(p2);
-            people.Add(p3);
-            people.Add(p4);
+            //people.Add(p1);
+            //people.Add(p2);
+            //people.Add(p3);
+            //people.Add(p4);
 
-            foreach(Person per in people)
+            string file = "people.txt";
+
+            //foreach (Person per in people)
+            //{
+            //    //Console.WriteLine(per.ToString());
+            //    File.AppendAllText(file, $"{per.FirstName};{per.LastName};{per.Age}{Environment.NewLine}");
+            //}
+
+
+
+            foreach(string s in File.ReadLines(file))
             {
-                Console.WriteLine(per.ToString());
+                Console.WriteLine(s);
+
+
+                Console.WriteLine(s.Split());
+
+                //people.Add(new Person(s.Split(';'))));
             }
 
         }
