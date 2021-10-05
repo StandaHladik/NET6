@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HelloWorld
 {
@@ -104,9 +105,37 @@ namespace HelloWorld
             //Console.WriteLine(p2);
 
 
-            Point p = new Point(100, 100);
+            //Point p = new Point(100, 100);
 
-            Console.WriteLine(p.Obsah());
+            //Console.WriteLine(p.Obsah());
+
+            //var p1 = new Point() { X = 10, Y = 20 };
+
+            //var x = p.GetX();
+            //p.SetX(-50);
+
+            // array
+            int[] pole_intu = new[] { 5, 12, 155, -5268 };
+
+            // list
+            List<int> list_intu = new List<int>();
+
+            List<Person> people = new List<Person>();
+
+            var p1 = new Person("Adam", "Smith", 30);
+            var p2 = new Person("Jane", "Doe", 45);
+            var p3 = new Person("Jan", "Novák", 22);
+            var p4 = new Person("Marie", "Dolejší", 18);
+
+            people.Add(p1);
+            people.Add(p2);
+            people.Add(p3);
+            people.Add(p4);
+
+            foreach(Person per in people)
+            {
+                Console.WriteLine(per.ToString());
+            }
 
         }
 

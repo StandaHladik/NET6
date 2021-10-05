@@ -8,6 +8,9 @@ namespace HelloWorld
 {
     class Point
     {
+        // Často se pojemnovává s podtržítkem pro použití uvnitř třídy
+        private uint _x = 0;
+
 
         public Point()
         {
@@ -21,8 +24,45 @@ namespace HelloWorld
             Y = y;
         }
 
-        public uint X { get; set; }
-        public uint Y { get; set; }
+        public uint X
+        {
+            get
+            {
+                return _x;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    _x = (uint)(value * (-1));
+                }
+                else
+                {
+                    _x = (uint)value;
+                }
+            }
+        }
+
+        public uint GetX()
+        {
+            return _x;
+        }
+        public void SetX(int val)
+        {
+            if(val < 0)
+            {
+                _x = (uint)(val * (-1));
+            }
+            else
+            {
+                _x = (uint)val;
+            }
+        }
+
+        //public uint X { get; set; } = 0;
+        public uint Y { get; set; } = 0;
+
+        public string Color { get; set; }
 
         public override string ToString()
         {
