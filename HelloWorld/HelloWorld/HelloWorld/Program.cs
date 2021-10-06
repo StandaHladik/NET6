@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Dataset.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace HelloWorld
 {
@@ -108,24 +109,51 @@ namespace HelloWorld
 
             //Console.WriteLine(nejchudsi.FirstName);
 
-            var result = clients.GroupBy(client => client.HomeAddress.City);
+            var result = clients.GroupBy(x => x.HomeAddress.City)
+                                .Select(g => new
+                                {
+                                    Mesto = g.Key,
+                                    Client = g.OrderByDescending(y => y.AccountSum()).First()
+                                });
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"mesto: {item.Mesto}, nejbohatsi klient: {item.Client.FirstName} {item.Client.LastName}, account sum: {item.Client.AccountSum()}");
+            }
+
+            var result2 = clients.GroupBy(client => client.HomeAddress.City);
+
+            var olomouc = result2.Where(x => x.Key == "Olomouc").First();
 
             Console.WriteLine("Nejbohatší");
-            foreach (var item in result)
+            foreach (var item in result2)
             {
                 Client nejbohatsi = clients.Where(c => c.HomeAddress.City == item.Key)
                                            .OrderByDescending(c => c.AccountSum()).First();
-                Console.WriteLine($"{nejbohatsi} {nejbohatsi.AccountSum()}");
-                                           
+                Console.WriteLine($"{nejbohatsi} {nejbohatsi.AccountSum()}");                                       
             }
+            Console.WriteLine();
             Console.WriteLine("Nejchudší");
-            foreach (var item in result)
+            foreach (var item in result2)
             {
                 Client nejchudsi = clients.Where(c => c.HomeAddress.City == item.Key)
                                            .OrderBy(c => c.AccountSum()).First();
                 Console.WriteLine($"{ nejchudsi} { nejchudsi.AccountSum()}");
-
             }
+
+            // group by to dictionary
+            Dictionary<string, List<Client>> dict = clients
+                .GroupBy(o => o.HomeAddress.City)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+           var vsichni_plnoleti1 =  clients.All(c => c.Age() > 18);
+
+           var vsichni_plnoleti2 = clients.Any(c => c.Age() > 18);
+
+           //var r1 = clients.Union(olomouc);
+
+           //var r2 = clients.Join();
+
         }
 
         static List<Person> LoadPeople(string file)
