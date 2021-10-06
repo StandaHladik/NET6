@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld
 {
-    class Person
+    class Person : INamed
     {
         public Person()
         {
@@ -46,6 +46,7 @@ namespace HelloWorld
         //public int Age { get; }
 
         public Address HomeAddress { get; set; } = new Address();
+        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public int Age()
         {
@@ -61,5 +62,12 @@ namespace HelloWorld
         {
             return GetFullName() + " " + HomeAddress.City;
         }
+
+        //public void Print()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public void Print() => Console.WriteLine("person: " + GetFullName());
     }
 }
