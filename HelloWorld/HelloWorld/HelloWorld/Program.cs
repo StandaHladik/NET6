@@ -92,14 +92,40 @@ namespace HelloWorld
             //    Console.WriteLine($"město: {item.Key} - počet lidí: {item.Count()}");
             //}
 
-            Client nejstarsi = clients.OrderByDescending(c => c.Age()).First();
+            //Client nejstarsi = clients.OrderByDescending(c => c.Age()).First();
 
-            Console.WriteLine($"Nejstarší klient: {nejstarsi.FirstName} {nejstarsi.LastName}");
+            //Console.WriteLine($"Nejstarší klient: {nejstarsi.FirstName} {nejstarsi.LastName}");
 
-            Client nejmladsi = clients.OrderBy(c => c.Age()).First();
+            //Client nejmladsi = clients.OrderBy(c => c.Age()).First();
 
-            Console.WriteLine($"Nejmladší klient: {nejmladsi.FirstName} {nejmladsi.LastName}");
+            //Console.WriteLine($"Nejmladší klient: {nejmladsi.FirstName} {nejmladsi.LastName}");
 
+            //Client nejbohatsi = clients.OrderByDescending(c => c.AccountSum()).First();
+
+            //Console.WriteLine(nejbohatsi.FirstName);
+
+            //Client nejchudsi = clients.OrderBy(c => c.AccountSum()).First();
+
+            //Console.WriteLine(nejchudsi.FirstName);
+
+            var result = clients.GroupBy(client => client.HomeAddress.City);
+
+            Console.WriteLine("Nejbohatší");
+            foreach (var item in result)
+            {
+                Client nejbohatsi = clients.Where(c => c.HomeAddress.City == item.Key)
+                                           .OrderByDescending(c => c.AccountSum()).First();
+                Console.WriteLine($"{nejbohatsi} {nejbohatsi.AccountSum()}");
+                                           
+            }
+            Console.WriteLine("Nejchudší");
+            foreach (var item in result)
+            {
+                Client nejchudsi = clients.Where(c => c.HomeAddress.City == item.Key)
+                                           .OrderBy(c => c.AccountSum()).First();
+                Console.WriteLine($"{ nejchudsi} { nejchudsi.AccountSum()}");
+
+            }
         }
 
         static List<Person> LoadPeople(string file)

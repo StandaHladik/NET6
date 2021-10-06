@@ -33,7 +33,9 @@ namespace Dataset.Model
 
         public double AccountSum()
         {
-            throw new NotImplementedException();
+            return Transactions.Sum(x => x.Value);         
+
+            //throw new NotImplementedException();
         }
 
         public override string ToString()
