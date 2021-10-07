@@ -14,6 +14,8 @@ namespace MVC.Controllers
             Client c = new Client() { Id = id, Name = "Jan Novák" };
 
             ViewData["boss"] = "Petr Krátký";
+            ViewData[]
+            
 
             return View(c);
         }
