@@ -1,10 +1,12 @@
-﻿@model Client
+﻿@model Dataset.Model.Client
 
 @{
     string nadrizeny = (string)(ViewData["boss"]);
+    DateTime date = (DateTime)(ViewData["date"]);
 }
 
 <h1>Informace o klientovi</h1>
 
-<p>Jméno klienta: @Model.Name</p>
+<p>Jméno klienta: @Model.FirstName</p>
 <p>Nadřízený: @nadrizeny</p>
+<p>Rok: @date.Year</p>

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dataset.Model;
 
 namespace MVC.Controllers
 {
@@ -11,11 +12,10 @@ namespace MVC.Controllers
     {
         public IActionResult Info(int id)
         {
-            Client c = new Client() { Id = id, Name = "Jan Novák" };
+            Client c = new Client() { FirstName = "Jan Novák" };
 
             ViewData["boss"] = "Petr Krátký";
-            ViewData[]
-            
+            ViewData["date"] = DateTime.Now;       
 
             return View(c);
         }
