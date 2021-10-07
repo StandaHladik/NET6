@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MVC.Data;
 using MVC.Models;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,13 @@ namespace MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, 
+                              ApplicationDbContext db)
         {
+            this.db = db;
             _logger = logger;
         }
 
@@ -31,6 +35,9 @@ namespace MVC.Controllers
         public string Seed()
         {
             var clients = Dataset.Data.LoadFromXML();
+
+            db.Clients.AddRange(clients);
+            db.SaveChanges();
 
             return "ok";
         }

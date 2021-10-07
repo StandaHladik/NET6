@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +13,13 @@ namespace Dataset.Model
     public class Client
     {
         public int Id { get; set; }
+        [MaxLength(200)]
+        [Display(Name = "Křestní jméno")]
         public string FirstName { get; set; }
+        [MaxLength(200)]
+        [Display(Name = "Příjmení")]
         public string LastName { get; set; }
-
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
 
         public Address HomeAddress { get; set; }
@@ -67,7 +73,23 @@ namespace Dataset.Model
         /// </summary>
         public double Value { get; set; }
 
+        [NotMapped]
+
+        public string TxTypeDesc
+        {
+            get
+            {
+                return GetTxType();
+            }
+        }
+
+        public string GetTxType()
+        {
+            return Type == TransactionType.CREDIT ? "příchozí" : "odchozí";
+        }
+
     }
+
 
     public enum TransactionType
     {     
