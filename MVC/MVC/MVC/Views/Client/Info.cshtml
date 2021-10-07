@@ -1,0 +1,10 @@
+﻿@model Client
+
+@{
+    string nadrizeny = (string)(ViewData["boss"]);
+}
+
+<h1>Informace o klientovi</h1>
+
+<p>Jméno klienta: @Model.Name</p>
+<p>Nadřízený: @nadrizeny</p>

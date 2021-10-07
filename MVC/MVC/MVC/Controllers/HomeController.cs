@@ -28,6 +28,13 @@ namespace MVC.Controllers
             return View();
         }
 
+        public string Seed()
+        {
+            var clients = Dataset.Data.LoadFromXML();
+
+            return "ok";
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
